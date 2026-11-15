@@ -1,252 +1,127 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Verificación de Certificado</title>
+
+<title>Mantenimiento</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: transparent;
+    color: inherit;
+    margin: 0;
+    padding: 20px;
 }
 
-body{
-    background:#eef1f7;
+h2 {
+    font-size: 22px;
+    font-weight: normal;
 }
 
-.top{
-    height:180px;
-    background:#1f4e96;
+.contador {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
-.top2{
-    height:180px;
-    background:#1f4e96;
-    margin-top:200px;
-}
-.card{
-    width:min(92%, 500px);
-    margin:-380px auto 30px;
-    background:#fff;
-    border-radius:8px;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
-    padding:15px 25px;
+.tiempo span {
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
 }
 
-
-.header{
-    text-align:center;
-    margin-bottom:30px;
+.tiempo small {
+    font-size: 12px;
 }
-
-.header h1{
-    color:#2458a8;
-    font-size:20px;
-    font-weight:500;
-    margin:20px 0;
-}
-
-    .centro{
-    text-align:center;
-}
-
-
-.centro img{
-    width:100%;
-    max-width:280px;
-    height:auto;
-}
-
-
-.success{
-    background:#42b649;
-    color:white;
-    padding:12px 18px;
-    border-radius:8px;
-    font-size:15px;
-    margin-bottom:20px;
-
- display:flex;
-    align-items:center;
-    gap:15px;
-
-    font-size:13px;
-    font-weight:bold;
-}
-
-.check{
-    width:22px;
-    height:22px;
-    background:#fff;
-    color:#42b649;
-
-    border-radius:50%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:14px;
-    font-weight:bold;
-
-    flex-shrink:0;
-}
-
-.item{
-    margin-bottom:10px;
-}
-
-.label{
-    display:inline-block;
-    background:#c99632;
-    color:white;
-    padding:5px 14px;
-    border-radius:20px;
-    font-size:14px;
-}
-
-.value{
-    font-size:14px;
-    color:#555;
-    margin-top:6px;
-    border-bottom:1px solid #ddd;
-    padding-bottom:6px;
-}
-@media (max-width:768px){
-
-.card{
-    width:100%;
-    max-width:none;
-    margin:-400px auto 20px;
-    padding:18px;
-    border-radius:8px;
-}
-}.top,
-.top2{
-    height:150px;
-}
-
-.top2{
-    margin-top:170px;
-}
-
-.header h1{
-    font-size:22px;
-}
-
-.success{
-    font-size:14px;
-    gap:10px;
-    padding:12px;
-}
-
-.check{
-    width:20px;
-    height:20px;
-    font-size:12px;
-}
-
-.label{
-    font-size:14px;
-    padding:5px 12px;
-}
-
-.value{
-    font-size:15px;
-    word-break:break-word;
-}
-}
-@media (max-width:480px){
-
-.card{
-    width:96%;
-    margin:-430px auto 15px;
-    padding:15px;
-}
-
-.header h1{
-    font-size:20px;
-}
-
-.centro img{
-    max-width:220px;
-}
-
-.success{
-    font-size:13px;
-    gap:8px;
-}
-
-.label{
-    font-size:13px;
-}
-
-.value{
-    font-size:14px;
-}
-}
-
 </style>
-
 </head>
+
 <body>
 
-<div class="top"></div>
-<div class="top2"></div>
+<h2>Sitio web temporalmente en mantenimiento</h2>
 
+<div class="contador">
+    <div class="tiempo">
+        <span id="dias">000</span>
+        <small>DÍAS</small>
+    </div>
 
-<div class="card">
+    <div class="tiempo">
+        <span id="horas">000</span>
+        <small>HORAS</small>
+    </div>
 
-<div class="header">
+    <div class="tiempo">
+        <span id="minutos">000</span>
+        <small>MINUTOS</small>
+    </div>
 
-
-<div class="header">
-
-<div class="centro">
-    <img src="https://github.com/cstc299-debug/mi-pagina-web/blob/main/M.png?raw=true" alt="Logo">
+    <div class="tiempo">
+        <span id="segundos">000</span>
+        <small>SEGUNDOS</small>
+    </div>
 </div>
 
+<script>
 
-</div>
+// ======================================
+// CONFIGURA AQUÍ TU FECHA DE FINALIZACIÓN
+// Formato: AÑO-MES-DÍA T HORA:MINUTOS:SEGUNDOS
+// Zona horaria de Honduras: -06:00
+// ======================================
 
+const fechaRegreso = new Date(
+    "2026-11-20T19:20:00-06:00"
+).getTime();
 
-<h1>AUTÉNTICAR CERTIFICADO</h1>
-</div>
+// ======================================
+// NO NECESITAS MODIFICAR LO SIGUIENTE
+// ======================================
 
-<div class="success">
-    <span class="check">✓</span>
- <span>CERTIFICADO AUTENTICADO CON LOS SIGUIENTES DATOS.</span>
-</div>
+function actualizarContador() {
 
-<div class="item">
-<div class="label">Estudiante:</div>
-<div class="value">ALEX ROEL DOMINGUEZ DOMINGUEZ  </div>
-</div>
+    const diferencia = fechaRegreso - Date.now();
 
-<div class="item">
-<div class="label">Curso:</div>
-<div class="value">EXCEL AVANZADO</div>
-</div>
+    if (diferencia <= 0) {
 
-<div class="item">
-<div class="label">Unidad Operativa:</div>
-<div class="value">Departamento de Formación a Distancia</div>
-</div>
+        document.getElementById("dias").textContent = "000";
+        document.getElementById("horas").textContent = "000";
+        document.getElementById("minutos").textContent = "000";
+        document.getElementById("segundos").textContent = "000";
 
-<div class="item">
-<div class="label">Modo de formación:</div>
-<div class="value">Complementación a Distancia (Virtual)</div>
-</div>
+        clearInterval(temporizador);
+        return;
+    }
 
-<div class="item">
-<div class="label">Número de registro:</div>
-<div class="value">4689006</div>
-</div>
+    const dias = Math.floor(diferencia / 86400000);
+    const horas = Math.floor(diferencia / 3600000) % 24;
+    const minutos = Math.floor(diferencia / 60000) % 60;
+    const segundos = Math.floor(diferencia / 1000) % 60;
 
-</div>
+    document.getElementById("dias").textContent =
+        String(dias).padStart(3, "0");
+
+    document.getElementById("horas").textContent =
+        String(horas).padStart(3, "0");
+
+    document.getElementById("minutos").textContent =
+        String(minutos).padStart(3, "0");
+
+    document.getElementById("segundos").textContent =
+        String(segundos).padStart(3, "0");
+}
+
+actualizarContador();
+
+const temporizador = setInterval(actualizarContador, 1000);
+
+</script>
 
 </body>
 </html>
