@@ -1,11 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Mi página web</title>
 
     <style>
+        /* Configuración general */
         * {
             margin: 0;
             padding: 0;
@@ -17,17 +20,41 @@
             min-height: 100%;
         }
 
+        /* Fondo principal */
         body {
             min-height: 100vh;
+            min-height: 100dvh;
 
-            /* Imagen de fondo */
             background-image: url("https://support.heberjahiz.com/hc/article_attachments/21013076295570");
 
-            /* Cubrir toda la pantalla */
             background-size: cover;
-            background-position: center;
+            background-position: center center;
             background-repeat: no-repeat;
             background-attachment: fixed;
+        }
+
+        /* Tablets */
+        @media screen and (max-width: 1024px) {
+            body {
+                background-attachment: scroll;
+                background-position: center;
+            }
+        }
+
+        /* Teléfonos móviles */
+        @media screen and (max-width: 600px) {
+            body {
+                background-size: cover;
+                background-position: center center;
+                background-attachment: scroll;
+            }
+        }
+
+        /* Teléfonos pequeños */
+        @media screen and (max-width: 380px) {
+            body {
+                background-position: center center;
+            }
         }
     </style>
 </head>
