@@ -1,116 +1,141 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>No se puede acceder a este sitio web</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>estudiln.com</title>
+<style>
+:root {
+  --bg: #ffffff;
+  --title: #202124;
+  --text: #5f6368;
+  --code: #5f6368;
+  --link: #1a73e8;
+  --btn-bg: #1a73e8;
+  --btn-bg-hover: #1b66c9;
+  --btn-text: #ffffff;
+  --icon: #5f6368;
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #202124;
+    --title: #e8eaed;
+    --text: #9aa0a6;
+    --code: #9aa0a6;
+    --link: #8ab4f8;
+    --btn-bg: #8ab4f8;
+    --btn-bg-hover: #a7c5fa;
+    --btn-text: #202124;
+    --icon: #9aa0a6;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #202124;
+  --title: #e8eaed;
+  --text: #9aa0a6;
+  --code: #9aa0a6;
+  --link: #8ab4f8;
+  --btn-bg: #8ab4f8;
+  --btn-bg-hover: #a7c5fa;
+  --btn-text: #202124;
+  --icon: #9aa0a6;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+main {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: clamp(48px, 14vh, 160px) 24px 48px;
+}
+.icon {
+  display: block;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 40px;
+  color: var(--icon);
+}
+h1 {
+  margin: 0 0 16px;
+  color: var(--title);
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+p { margin: 0 0 24px; font-size: 1rem; }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-radius: 4px; }
+.code {
+  margin: 0 0 56px;
+  color: var(--code);
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+  word-break: break-all;
+}
+button {
+  appearance: none;
+  border: 0;
+  border-radius: 100px;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font: inherit;
+  font-size: 0.9375rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+button:hover { background: var(--btn-bg-hover); }
+button:active { transform: translateY(1px); }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #ffffff;
-            color: #202124;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 25px;
-        }
-
-        .error {
-            width: 100%;
-            max-width: 660px;
-        }
-
-        .icon {
-            font-size: 45px;
-            margin-bottom: 45px;
-            color: #5f6368;
-        }
-
-        h1 {
-            font-size: 25px;
-            font-weight: 500;
-            margin-bottom: 22px;
-        }
-
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #5f6368;
-            margin-bottom: 18px;
-        }
-
-        .codigo {
-            font-size: 13px;
-            margin-top: 25px;
-        }
-
-        .boton {
-            display: inline-block;
-            margin-top: 42px;
-            padding: 11px 20px;
-            background: #1a73e8;
-            color: white;
-            border: none;
-            border-radius: 25px;
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        .boton:hover {
-            background: #1765cc;
-        }
-
-        @media (max-width: 600px) {
-            .error {
-                max-width: 100%;
-            }
-
-            h1 {
-                font-size: 23px;
-            }
-
-            p {
-                font-size: 15px;
-            }
-        }
-    </style>
+@media (min-width: 900px) {
+  main { padding-left: 0; padding-right: 0; transform: translateX(-4vw); }
+}
+@media (max-width: 480px) {
+  main { padding: 72px 20px 40px; }
+  .icon { width: 64px; height: 64px; margin-bottom: 32px; }
+  h1 { font-size: 1.5rem; }
+  button { width: 100%; padding: 12px 20px; }
+}
+</style>
 </head>
-
 <body>
+<main>
+  <svg class="icon" viewBox="0 0 44 56" fill="none" stroke="currentColor" stroke-width="4" shape-rendering="crispEdges" role="img" aria-label="Página con cara triste">
+    <path d="M2 2 H26 V6 H30 V10 H34 V14 H38 V18 H42 V54 H2 Z"/>
+    <path d="M26 2 V18 H42"/>
+    <path d="M12 26 V32 M28 26 V32" stroke-width="4"/>
+    <path d="M12 44 H16 V40 H28 V44 H32"/>
+    <path d="M34 34 V38" stroke-width="3"/>
+  </svg>
 
-    <main class="error">
+  <h1>No se puede acceder a este sitio web</h1>
+  <p>Comprueba si hay un error de escritura en estudiln.com.</p>
+  <p>Si está escrito correctamente, <a href="#diagnostico" id="diag">prueba a ejecutar el diagnóstico de red de Windows</a>.</p>
+  <div class="code">DNS_PROBE_FINISHED_NXDOMAIN</div>
 
-        <div class="icon">☹</div>
-
-        <h1>No se puede acceder a este sitio web</h1>
-
-        <p>
-            Es posible que la página web no esté disponible
-            temporalmente o que se haya trasladado
-            permanentemente a otra dirección.
-        </p>
-
-        <p>
-            Comprueba la dirección web e inténtalo de nuevo.
-        </p>
-
-        <p class="codigo">
-             ERROR 404
-        </p>
-
-        <button class="boton" onclick="location.reload()">
-            Volver a cargar
-        </button>
-
-    </main>
-
+  <button type="button" id="reload">Volver a cargar</button>
+</main>
+<script>
+document.getElementById('reload').addEventListener('click', function () {
+  location.reload();
+});
+document.getElementById('diag').addEventListener('click', function (e) {
+  e.preventDefault();
+});
+</script>
 </body>
 </html>
