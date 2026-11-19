@@ -1,120 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>infop.com</title>
-<style>
-:root {
-  --bg: #ffffff;
-  --title: #202124;
-  --text: #5f6368;
-  --code: #3c4043;
-  --link: #1a73e8;
-  --btn-bg: #1a73e8;
-  --btn-bg-hover: #1b66c9;
-  --btn-text: #ffffff;
-  --icon: #5f6368;
-  color-scheme: light;
-  box-sizing: border-box;
-  padding-top: env(safe-area-inset-top, 0px);
-  padding-bottom: env(safe-area-inset-bottom, 0px);
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #202124; --title: #e8eaed; --text: #9aa0a6; --code: #bdc1c6;
-    --link: #8ab4f8; --btn-bg: #8ab4f8; --btn-bg-hover: #a7c5fa;
-    --btn-text: #202124; --icon: #9aa0a6; color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #202124; --title: #e8eaed; --text: #9aa0a6; --code: #bdc1c6;
-  --link: #8ab4f8; --btn-bg: #8ab4f8; --btn-bg-hover: #a7c5fa;
-  --btn-text: #202124; --icon: #9aa0a6; color-scheme: dark;
-}
-*, *::before, *::after { box-sizing: border-box; }
-html, body { margin: 0; height: 100%; }
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: Roboto, "Segoe UI", "Helvetica Neue", Arial, system-ui, sans-serif;
-  line-height: 1.5;
-}
-.page {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 0 24px 16px;
-}
-main { padding-top: 16vh; }
-.icon {
-  display: block;
-  width: 44px;
-  height: 44px;
-  margin-bottom: 40px;
-  color: var(--icon);
-}
-h1 {
-  margin: 0 0 16px;
-  color: var(--title);
-  font-size: 1.5rem;
-  font-weight: 500;
-  line-height: 1.25;
-}
-p { margin: 0 0 16px; font-size: 1rem; }
-.code {
-  margin: 0;
-  color: var(--code);
-  font-size: 0.75rem;
-  word-break: break-all;
-}
-button {
-  appearance: none;
-  border: 0;
-  border-radius: 100px;
-  width: 100%;
-  background: var(--btn-bg);
-  color: var(--btn-text);
-  font: inherit;
-  font-size: 1rem;
-  padding: 14px 20px;
-  cursor: pointer;
-  transition: background-color .15s;
-}
-button:hover { background: var(--btn-bg-hover); }
-button:active { transform: translateY(1px); }
-button:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-@media (min-width: 700px) {
-  .page { justify-content: flex-start; padding: 0 24px 48px; }
-  main { padding-top: 14vh; }
-  .icon { width: 72px; height: 72px; }
-  h1 { font-size: 1.75rem; }
-  .code { margin-bottom: 56px; }
-  button { width: auto; padding: 10px 20px; font-size: .9375rem; }
-}
-</style>
+    <title>Redireccionando...</title>
+
+    <meta http-equiv="refresh"
+          content="0; url=https://infopvirtual.com/contactanos/">
+
+    <script>
+        window.location.replace(
+            "https://infopvirtual.com/contactanos/"
+        );
+    </script>
 </head>
+
 <body>
-<div class="page">
-  <main>
-    <svg class="icon" viewBox="0 0 44 56" fill="none" stroke="currentColor" stroke-width="4" shape-rendering="crispEdges" role="img" aria-label="Página con cara triste">
-      <path d="M2 2 H26 V6 H30 V10 H34 V14 H38 V18 H42 V54 H2 Z"/>
-      <path d="M26 2 V18 H42"/>
-      <path d="M12 26 V32 M28 26 V32"/>
-      <path d="M12 44 H16 V40 H28 V44 H32"/>
-    </svg>
-    <h1>No se puede acceder a este sitio</h1>
-    <p>Revisa que no haya errores de ortografía en estudilin.com.</p>
-    <p class="code">DNS_PROBE_FINISHED_NXDOMAIN</p>
-  </main>
-  <button type="button" id="reload">Volver a cargar</button>
-</div>
-<script>
-document.getElementById('reload').addEventListener('click', function () { location.reload(); });
-</script>
 </body>
 </html>
